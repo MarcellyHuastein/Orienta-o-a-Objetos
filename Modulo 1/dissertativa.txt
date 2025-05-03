@@ -1,0 +1,22 @@
+Resposta questão 1: Nessa matéria de programação orientada a objetos eu entendo que vamos aprender a dar mais direção para as estruturas para que tenhamos um resultado mais acertivo e que nos auxilie melhores em certos sistemas
+
+Resposta questão 2: Seria letra C- programação orientada a objetos
+Justificativa:
+Estrutura e interação das entidades-O sistema possui entidades bem definidas (Livro, Autor, Usuário, Empréstimo) com atributos e comportamentos claros, há relações naturais entre os objetos (ex: um Livro "pertence a" um Autor, um Empréstimo "associa" um Usuário e um Livro), também permite modelar essas entidades como classes e seus relacionamentos como associações, agregações ou composições.
+Reuso- facilita o reuso através de herança (ex: poderíamos ter uma classe base "Pessoa" para Autor e Usuário) e polimorfismo, componentes como sistemas de notificação ou cálculo de multas poderiam ser encapsulados e reutilizados.
+Evolução do sistema- Novos tipos de itens (como Revistas ou DVDs) poderiam ser adicionados como subclasses de uma classe base "ItemBiblioteca", novos comportamentos (como reservas online ou renovação de empréstimos) poderiam ser adicionados com mínimo impacto, a manutenção é facilitada pelo encapsulamento - mudanças internas em uma classe não afetam outras.
+Eficiência - organiza melhor a complexidade em um sistema com múltiplas entidades inter-relacionadas, operações como buscar livros por autor ou calcular multas por atraso ficam naturalmente encapsuladas nos objetos relevantes.
+Resposta questão 3:
+    Livro → Autor:
+        1 para N (um autor pode ter escrito vários livros, mas um livro tem um autor principal).
+        Implementação: Chave estrangeira autor_id: int (FK) na classe Livro.
+    Usuário → Empréstimo:
+        1 para N (um usuário pode ter vários empréstimos, mas cada empréstimo pertence a um único usuário).
+        Implementação: Chave estrangeira usuario_id: int (FK) na classe Empréstimo.
+    Livro → Empréstimo:
+        1 para N (um livro pode ser emprestado várias vezes, mas cada empréstimo refere-se a um único livro).
+        Implementação: Chave estrangeira livro_id: int (FK) na classe Empréstimo.
+
+Autor (1) ――◇ Livro (N)  
+           │  
+           ◇―― Empréstimo (N) ――◇ Usuário (1)
